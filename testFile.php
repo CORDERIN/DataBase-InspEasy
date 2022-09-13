@@ -16,6 +16,7 @@ include("conection.php");
 
     if(isset($_FILES['file'])){
 
+    
         $file = $_FILES['file'];
 
         if($file['error']) die("Falha ao enviar arquivo");
@@ -34,9 +35,33 @@ include("conection.php");
         }else{
         echo"Falha ao enviar o arquivo";  
         } 
+
     }
 
     $mysql_arquivos = $mysqli->query("SELECT * from files") or die($mysqli->error);
+
+
+
+    /*$file_tmp = $_FILES['file']['tmp_name'];
+    $data = file($file_tmp);
+
+    foreach($data as $line){
+
+     $value = explode('_', $line);
+     $date = trim($value[0]);
+     //var_dump($date);
+     $hour = trim($value[1]);
+     //var_dump($hour);
+     $valueSensor = trim($value[2]);
+     //var_dump($valueSensor);
+     $vibration = trim($value[3]);
+     //var_dump($vibration);
+     $alarm = trim($value[5]);
+     //var_dump($alarm);
+     $nameMachine = trim($value[7]);
+     //var_dump($nameMachine);
+    }
+    */
     
 
 ?>
