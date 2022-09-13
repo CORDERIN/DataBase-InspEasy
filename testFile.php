@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 include("conection.php");
 
@@ -16,14 +16,59 @@ include("conection.php");
 
     if(isset($_FILES['file'])){
 
-    
+        $file_tmp = $_FILES['file']['tmp_name'];
+        $data = file($file_tmp);
+        $nameFile = $_FILES['file']['name'];
+        $extension = strtolower(pathinfo($nameFile, PATHINFO_EXTENSION));
+        $nameTable = substr($nameFile, 0, strpos($nameFile, ".".$extension));
+        $nameTable = str_replace(array("-", "."), '', $nameTable);
+
+        $mysqli->query("CREATE TABLE $nameTable(
+                        dateS date, 
+                        hourS time,
+                        valueSensor float,
+                        vibration float,
+                        nameMachine varchar(50),
+                        localMachine varchar(50),
+                        measure varchar(30),
+                        typeSensor char
+                        )") or die($mysqli->error);
+
+        foreach($data as $line){
+
+            error_reporting(0);
+
+            $value = explode('_', $line);
+
+            if(trim($value[0]) != ''){
+
+                $date = explode('/', trim($value[0]));
+
+                $aux = $date[0];
+                $date[0] = $date[2];
+                $date[2] = $aux;
+
+                $date = $date[0]."-".$date[1]."-".$date[2];//var_dump($date);
+                $hour = trim($value[1]);//var_dump($hour);
+                $valueSensor = str_replace(array(","), '.', trim($value[2]));//var_dump($valueSensor);
+                $vibration = str_replace(array(","), '.', trim($value[3]));//var_dump($vibration);
+                $nameMachine = trim($value[7]);//var_dump($nameMachine);
+                $localMachine = trim($value[8]);//var_dump($localMachine);
+                $measure = trim($value[9]);//var_dump($measure);
+                $typeSensor = trim($value[10]);//var_dump($typeSensor);
+
+                $mysqli->query("INSERT into $nameTable values('$date','$hour','$valueSensor','$vibration','$nameMachine','$localMachine','$measure','$typeSensor')") or die($mysqli->error);
+
+            }
+
+        }
+           
+
         $file = $_FILES['file'];
 
         if($file['error']) die("Falha ao enviar arquivo");
 
         $foulder = "files/";
-        $nameFile = $file['name'];
-        $extension = strtolower(pathinfo($nameFile, PATHINFO_EXTENSION));
 
         if ($extension != "his" && $extension != "txt") die("Tipo de arquivo não aceito");
 
@@ -39,31 +84,7 @@ include("conection.php");
     }
 
     $mysql_arquivos = $mysqli->query("SELECT * from files") or die($mysqli->error);
-
-
-
-    /*$file_tmp = $_FILES['file']['tmp_name'];
-    $data = file($file_tmp);
-
-    foreach($data as $line){
-
-     $value = explode('_', $line);
-     $date = trim($value[0]);
-     //var_dump($date);
-     $hour = trim($value[1]);
-     //var_dump($hour);
-     $valueSensor = trim($value[2]);
-     //var_dump($valueSensor);
-     $vibration = trim($value[3]);
-     //var_dump($vibration);
-     $alarm = trim($value[5]);
-     //var_dump($alarm);
-     $nameMachine = trim($value[7]);
-     //var_dump($nameMachine);
-    }
-    */
     
-
 ?>
 
 <!DOCTYPE html>
