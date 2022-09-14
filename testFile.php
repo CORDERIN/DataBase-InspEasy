@@ -20,7 +20,7 @@
         $nameFile = $_FILES['file']['name'];
         $extension = strtolower(pathinfo($nameFile, PATHINFO_EXTENSION));
 
-        if ($extension != "his" && $extension != "txt") die("Tipo de arquivo não aceito");
+        if ($extension != "his" && $extension != "txt") header("Location:pages/filenotaccepted.php");
 
         if($extension == "his"){
 

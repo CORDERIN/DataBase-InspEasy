@@ -8,7 +8,7 @@ body{
     padding:0;
 }
 
-.container{
+.container_{
 
     display: flex;
     justify-content: center;
@@ -18,12 +18,12 @@ body{
 
     background-image: linear-gradient(
         to bottom, 
-        rgba(0,0,0,0.8) 0%,
+        rgba(0, 0, 0, 0.8) 0%,
         rgba(0,0,0,0.2) 20%,
         rgba(20,20,20,0.2) 80%,
         rgba(20,20,20,0.6) 100%
     
-     ),url(../imgs/pexels-elevate-1267338.jpg);
+     ),url(../imgs/startup-desktop.jpg);
     background-size: cover;
     
 }
@@ -33,25 +33,41 @@ body{
 
     display: flex;
     justify-content: center;
-    height: 70vh;
     align-items: center;
     
 
 
 }
 
+.input {
+
+    background: rgb(62,98,170);
+    background: linear-gradient(90deg, rgba(62,98,170,1) 0%, rgba(46,38,102,0.76234243697479) 0%, rgba(58,58,190,1) 100%);
+    border: white 2px solid;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    font-size: 18px;
+    h1{
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+}
+
 .header{
 
     width: 100vw;
-    margin-top: 30px;
-    justify-content: left;
+    justify-content: right;
     display: flex;
+    position: absolute;
     
 
     img{
 
-        margin-left: 100px;
-        width: 167px;
+        margin-top: 20px;
+        margin-right: 200px;
+        width: 200px;
         
     }
 }
