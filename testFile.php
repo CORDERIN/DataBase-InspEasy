@@ -1,6 +1,7 @@
 <?php 
 
-include("conection.php");
+    include("conection.php");
+
 
     if(isset($_GET['delete'])){
 
@@ -16,10 +17,15 @@ include("conection.php");
 
     if(isset($_FILES['file'])){
 
-        $file_tmp = $_FILES['file']['tmp_name'];
-        $data = file($file_tmp);
         $nameFile = $_FILES['file']['name'];
         $extension = strtolower(pathinfo($nameFile, PATHINFO_EXTENSION));
+
+        if ($extension != "his" && $extension != "txt") die("Tipo de arquivo não aceito");
+
+        if($extension == "his"){
+
+        $file_tmp = $_FILES['file']['tmp_name'];
+        $data = file($file_tmp);
         $nameTable = substr($nameFile, 0, strpos($nameFile, ".".$extension));
         $nameTable = str_replace(array("-", "."), '', $nameTable);
 
@@ -34,7 +40,7 @@ include("conection.php");
                         typeSensor char
                         )") or die($mysqli->error);
 
-        foreach($data as $line){
+            foreach($data as $line){
 
             error_reporting(0);
 
@@ -61,16 +67,14 @@ include("conection.php");
 
             }
 
+            }
         }
-           
 
         $file = $_FILES['file'];
 
         if($file['error']) die("Falha ao enviar arquivo");
 
         $foulder = "files/";
-
-        if ($extension != "his" && $extension != "txt") die("Tipo de arquivo não aceito");
 
         $path = $foulder . $nameFile;
         $OK = move_uploaded_file($file["tmp_name"], $path);
@@ -124,9 +128,12 @@ include("conection.php");
         }
         ?>
 
+
     </tbody>
 
     </table>
+
+    <a href="index.php"><button>Voltar para o Menu Principal</button></a>
 
 </body>
 </html>

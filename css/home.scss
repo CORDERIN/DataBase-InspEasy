@@ -1,0 +1,57 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+
+    margin:0;
+    padding:0;
+}
+
+.container{
+
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 0;
+
+    background-image: linear-gradient(
+        to bottom, 
+        rgba(0,0,0,0.8) 0%,
+        rgba(0,0,0,0.2) 20%,
+        rgba(20,20,20,0.2) 80%,
+        rgba(20,20,20,0.6) 100%
+    
+     ),url(../imgs/pexels-elevate-1267338.jpg);
+    background-size: cover;
+    
+}
+
+
+.content{
+
+    display: flex;
+    justify-content: center;
+    height: 70vh;
+    align-items: center;
+    
+
+
+}
+
+.header{
+
+    width: 100vw;
+    margin-top: 30px;
+    justify-content: left;
+    display: flex;
+    
+
+    img{
+
+        margin-left: 100px;
+        width: 167px;
+        
+    }
+}
