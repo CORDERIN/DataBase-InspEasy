@@ -29,7 +29,7 @@
         $nameTable = substr($nameFile, 0, strpos($nameFile, ".".$extension));
         $nameTable = str_replace(array("-", "."), '', $nameTable);
 
-        $mysqli->query("CREATE TABLE $nameTable(
+        $mysqli->query("CREATE TABLE IF NOT EXISTS $nameTable(
                         dateS date, 
                         hourS time,
                         valueSensor float,
@@ -68,6 +68,10 @@
             }
 
             }
+        }
+
+        if($extension == "txt"){
+
         }
 
         $file = $_FILES['file'];
