@@ -12,13 +12,13 @@
         <div class="login_container">
             <h1 class="login_title">Login</h1>
 
-            <form action="" class="login_form">
+            <form action="index.php" class="login_form">
 
                 <input class="login_input" type="email" placeholder="e-mail">
                 <span class="login_input-border"></span>
                 <input class="login_input" type="password" placeholder="senha">
                 <span class="login_input-border"></span>
-                <button class="login_submit">Login</button>
+                <button type = "submit"class="login_submit">Login</button>
                 <button class="login_submit">Cadastrar</button>
                 <a class="login_reset" href="">Esqueci a senha</a>
 

@@ -8,7 +8,7 @@ body{
 .login{
 
     height: 100vh;
-    background: linear-gradient(120deg, #E75590, #00C2CB );
+    background: linear-gradient(90deg, rgba(62,98,170,1) 0%, rgba(46,38,102,1) 0%, rgba(58,58,190,1) 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,7 +76,7 @@ body{
     height: 1px;
     width: 0;
     margin-bottom: 16px;
-    background: linear-gradient(120deg, #E75590, #00C2CB );
+    background: linear-gradient(90deg, rgba(62,98,170,1) 0%, rgba(46,38,102,1) 0%, rgba(58,58,190,1) 100%);
     transition: .3s ease-in-out;
 
 }
@@ -87,7 +87,7 @@ body{
     height: 48px;
     width: 100%;
     outline: none;
-    background: linear-gradient(120deg, #E75590, #00C2CB,  #E75590);
+    background: linear-gradient(90deg, rgba(62,98,170,1) 0%, rgba(46,38,102,1) 0%, rgba(58,58,190,1) 100%);
     background-size: 200%;
     margin-bottom: 16px;
     color: white;
@@ -106,3 +106,4 @@ body{
     color: #929292;
     text-decoration: none;
 }
+
