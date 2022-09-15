@@ -1,0 +1,120 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.login {
+  height: 100vh;
+  background: linear-gradient(120deg, #E75590, #00C2CB);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login_container {
+  min-height: 400px;
+  width: 300px;
+  background-color: white;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 32px;
+  border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login_title {
+  margin-bottom: 32px;
+  color: #303030;
+}
+
+.login_form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.login_input {
+  height: 48px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-left: 8px;
+  border: unset;
+  outline: none;
+}
+
+.login_input:focus * .login_input-border::after {
+  width: 100%;
+}
+
+.login_input-border {
+  height: 1px;
+  width: 100%;
+  margin-bottom: 16px;
+  background-color: #cfcfcfcf;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+.login_input-border::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 0;
+  margin-bottom: 16px;
+  background: linear-gradient(120deg, #E75590, #00C2CB);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+.login_submit {
+  height: 48px;
+  width: 100%;
+  outline: none;
+  background: linear-gradient(120deg, #E75590, #00C2CB, #E75590);
+  background-size: 200%;
+  margin-bottom: 16px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: unset;
+  border-radius: 4px;
+  cursor: pointer;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+}
+
+.login_reset {
+  margin-top: 16px;
+  font-size: 12px;
+  color: #929292;
+  text-decoration: none;
+}
+/*# sourceMappingURL=login.css.map */
