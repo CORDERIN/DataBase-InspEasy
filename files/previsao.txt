@@ -1,0 +1,9 @@
+090,3 _ Motor            _ WF192.168.000.020-7 _ Humidade _ Bancada             
+100,8 _ Motor            _ WF192.168.000.020-9 _ Temp.Orvalho _  _ Motor            
+255,8 _ Motor            _ WF192.168.000.020-8 _ Temp.Ambiente _  _ Motor            
+364,8 _ Motor            _ WF192.168.000.020-A _ Condensação _  _ Motor            
+365,0 _ Motor EL1534     _ WF192.168.000.200-0 _ Temperatura _  _ Motor            
+365,0 _ Motor EL1534     _ WF192.168.000.200-1 _ Eixo X Harm _ Bancada HAL         
+365,0 _ Motor EL1534     _ WF192.168.000.200-2 _ Eixo Y RMS  _ Bancada HAL         
+365,0 _ Motor EL1534     _ WF192.168.000.200-3 _ Eixo Z Harm _ Bancada HAL         
+365,0 _ Motor EL1534     _ WF192.168.000.200-3 _ Eixo Z Harm _ Bancada HAL         
